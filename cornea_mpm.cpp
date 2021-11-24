@@ -47,7 +47,7 @@ void Setup (MPM::Domain & dom, void * UD)
 }
 
 int main(int argc, char **argv) try
-{
+{ 
     MPM::Domain dom;
     UserData dat;
     dom.UserData = &dat;
@@ -72,7 +72,7 @@ int main(int argc, char **argv) try
     dom.BoundingBox(Xmin,Xmax);
     double h = dom.ResizeDomainMesh(Xmin-Vec3_t(0.5e-2,0.5e-2,0.5e-2),Xmax+Vec3_t(0.5e-2,0.5e-2,0.5e-2),1.0);
 
-    double dt   = 2.0*h/Cs; //h is the minimum mpm element size and dt is the time step
+    double dt   = 5.0*h/Cs; //h is the minimum mpm element size and dt is the time step
     double Bc   = h;      //Mimimun level for the boundary condition
     double Bcup = Xmax(2)-h;
 
